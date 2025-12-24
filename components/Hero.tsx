@@ -1,5 +1,70 @@
-import React from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
+
+const Snowflakes: React.FC = () => {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check for reduced motion preference
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setPrefersReducedMotion(motionQuery.matches);
+
+    const handleMotionChange = (e: MediaQueryListEvent) => {
+      setPrefersReducedMotion(e.matches);
+    };
+    motionQuery.addEventListener('change', handleMotionChange);
+
+    // Check for mobile viewport
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      motionQuery.removeEventListener('change', handleMotionChange);
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
+
+  const snowflakes = useMemo(() => {
+    // Reduce count on mobile for better performance, skip if reduced motion preferred
+    const count = isMobile ? 60 : 150;
+    return Array.from({ length: count }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      startTop: -(Math.random() * 100 + 20), // Start above viewport
+      size: Math.random() * 3 + 2,
+      duration: Math.random() * 12 + 12,
+      delay: Math.random() * 20,
+      opacity: Math.random() * 0.3 + 0.4,
+      animation: Math.random() > 0.5 ? 'snowfall' : 'snowfall-diagonal',
+    }));
+  }, [isMobile]);
+
+  // Don't render snowflakes if user prefers reduced motion
+  if (prefersReducedMotion) {
+    return null;
+  }
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]" aria-hidden="true">
+      {snowflakes.map((flake) => (
+        <div
+          key={flake.id}
+          className="snowflake"
+          style={{
+            left: `${flake.left}%`,
+            top: `${flake.startTop}px`,
+            width: `${flake.size}px`,
+            height: `${flake.size}px`,
+            opacity: flake.opacity,
+            animation: `${flake.animation} ${flake.duration}s linear ${flake.delay}s infinite`,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
 
 export const Hero: React.FC = () => {
   return (
@@ -18,6 +83,9 @@ export const Hero: React.FC = () => {
         {/* Overlay gradient - adjusted for lake mood */}
         <div className="absolute inset-0 bg-gradient-to-b from-estate-800/80 via-estate-800/50 to-estate-800" />
       </div>
+
+      {/* Snow Effect */}
+      <Snowflakes />
 
       {/* Content */}
       <div className="relative h-full flex flex-col items-center justify-center text-center px-4">

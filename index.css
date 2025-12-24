@@ -1,1 +1,66 @@
 /* Main styles - Tailwind is loaded via CDN in index.html */
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .snowflake {
+    display: none !important;
+  }
+}
+
+/* Snow Effect Animations */
+@keyframes snowfall {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(calc(100vh + 150px)) translateX(25px);
+  }
+}
+
+@keyframes snowfall-diagonal {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(calc(100vh + 150px)) translateX(-35px);
+  }
+}
+
+.snowflake {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(0.5px);
+}
+
+/* Focus visible styles for better keyboard navigation */
+:focus-visible {
+  outline: 2px solid #E7BD8B;
+  outline-offset: 2px;
+}
+
+/* Skip to content link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #1E305E;
+  color: #FEFEF5;
+  padding: 8px 16px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}

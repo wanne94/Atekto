@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Mountain, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
+import { AtektoLogo } from './AtektoLogo';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,20 +42,17 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <div 
-              className="flex items-center cursor-pointer group" 
+            <button
+              type="button"
+              className="flex items-center cursor-pointer group bg-transparent border-none p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-2 focus-visible:ring-offset-estate rounded-lg"
               onClick={() => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 if(isOpen) toggleMenu();
               }}
+              aria-label="Atekto - Povratak na vrh stranice"
             >
-              <div className="bg-clay/20 p-2 rounded-xl border border-clay/30 group-hover:bg-clay/40 transition-all">
-                <Mountain className="h-6 w-6 text-clay" />
-              </div>
-              <span className="ml-3 text-lg font-bold tracking-widest text-white uppercase">
-                Atekto
-              </span>
-            </div>
+              <AtektoLogo size={36} showText={true} />
+            </button>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
@@ -68,7 +66,7 @@ export const Navbar: React.FC = () => {
                 </a>
               ))}
               <a href="#kontakt" className="bg-soil hover:bg-clay text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition-all shadow-lg shadow-soil/30 border border-clay/30 active:scale-95">
-                Zakaži Sastanak
+                Zatraži Ponudu
               </a>
             </div>
 
@@ -113,11 +111,11 @@ export const Navbar: React.FC = () => {
                 onClick={toggleMenu}
                 className="block w-full bg-soil hover:bg-clay text-white py-5 rounded-2xl font-bold text-lg shadow-2xl border border-clay/20 active:scale-95 transition-all text-center"
               >
-                Zatraži Ponudu Odmah
+                Zatraži Ponudu
               </a>
               <div className="mt-8 text-center">
                 <a href="mailto:info@atekto.ba" className="text-clay/60 text-sm hover:text-clay transition-colors">info@atekto.ba</a>
-                <a href="tel:+38761123456" className="block text-clay/60 text-sm mt-1 hover:text-clay transition-colors">+387 61 123 456</a>
+                <a href="tel:+38762712594" className="block text-clay/60 text-sm mt-1 hover:text-clay transition-colors">+387 62 712 594</a>
               </div>
             </div>
           </div>

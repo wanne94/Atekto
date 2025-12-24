@@ -42,10 +42,10 @@ export const Features: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-sm font-bold text-clay uppercase tracking-widest mb-2">Zašto A-Frame?</h2>
-            <h3 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
+            <span className="text-sm font-bold text-clay uppercase tracking-widest mb-2 block">Zašto A-Frame?</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
               Građeno u skladu sa prirodom, za vašu <span className="text-clay italic">budućnost</span>.
-            </h3>
+            </h2>
             <p className="text-stone-white/70 text-lg mb-8 leading-relaxed font-light">
               Naše kuće nisu samo lijepe na oko. One su rezultat godina inženjerskog razvoja kako bi se postigao savršen balans između estetike, funkcionalnosti i održivosti.
             </p>
@@ -60,7 +60,7 @@ export const Features: React.FC = () => {
                 <div className="bg-clay/20 w-12 h-12 rounded-lg flex items-center justify-center text-clay mb-4 group-hover:bg-clay/30 group-hover:text-clay-300 transition-colors">
                   {feature.icon}
                 </div>
-                <h4 className="text-lg font-bold mb-2 text-stone-white">{feature.title}</h4>
+                <h3 className="text-lg font-bold mb-2 text-stone-white">{feature.title}</h3>
                 <p className="text-stone-white/60 text-sm leading-relaxed">
                   {feature.description}
                 </p>

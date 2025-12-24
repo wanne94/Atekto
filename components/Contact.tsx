@@ -20,8 +20,10 @@ export const Contact: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <img
           src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2832&auto=format&fit=crop"
-          alt="Nature Field Background"
+          alt=""
+          aria-hidden="true"
           className="w-full h-full object-cover opacity-25"
+          loading="lazy"
           onError={(e) => {
             e.currentTarget.src = "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2670&auto=format&fit=crop";
           }}
@@ -36,7 +38,7 @@ export const Contact: React.FC = () => {
           {/* Info Side - Semi transparent dark overlay */}
           <div className="bg-black/30 backdrop-blur-sm p-12 lg:w-2/5 flex flex-col justify-between border-r border-white/5">
             <div>
-              <h3 className="text-3xl font-bold mb-6 text-white">Kontaktirajte Nas</h3>
+              <h2 className="text-3xl font-bold mb-6 text-white">Kontaktirajte Nas</h2>
               <p className="text-stone-white/70 mb-12 font-light">
                 Spremni ste za vlastitu oazu mira? Naš tim je tu da odgovori na sva vaša pitanja i pomogne vam u realizaciji projekta.
               </p>
@@ -48,7 +50,7 @@ export const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-xs text-clay uppercase font-semibold tracking-wider">Telefon</p>
-                    <p className="text-lg font-medium text-white">+387 61 123 456</p>
+                    <p className="text-lg font-medium text-white">+387 62 712 594</p>
                   </div>
                 </div>
                 <div className="flex items-start group">
@@ -92,7 +94,7 @@ export const Contact: React.FC = () => {
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center animate-fade-in">
                 <CheckCircle className="h-20 w-20 text-accent mb-6 drop-shadow-[0_0_10px_rgba(195,221,195,0.5)]" />
-                <h3 className="text-2xl font-bold text-white mb-2">Hvala na upitu!</h3>
+                <h3 className="text-2xl font-bold text-white mb-2" role="status">Hvala na upitu!</h3>
                 <p className="text-stone-white/60">Naš tim će vas kontaktirati u roku od 24 sata.</p>
               </div>
             ) : (
@@ -115,11 +117,10 @@ export const Contact: React.FC = () => {
 
                 <div>
                   <label htmlFor="model" className="block text-sm font-medium text-stone-white/70 mb-2 ml-1">Zainteresovani ste za model</label>
-                  <select id="model" className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white focus:border-clay focus:bg-black/30 focus:ring-0 transition-all outline-none appearance-none">
-                    <option value="" className="bg-estate text-stone-white/60">Odaberite model (opcionalno)</option>
-                    <option value="mala-vila" className="bg-estate">Mala Vila</option>
-                    <option value="planinski-vrh" className="bg-estate">Planinski Vrh</option>
-                    <option value="veliki-horizont" className="bg-estate">Veliki Horizont</option>
+                  <select id="model" aria-describedby="model-help" className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white focus:border-clay focus:bg-black/30 focus:ring-0 transition-all outline-none appearance-none">
+                    <option value="" className="bg-estate text-stone-white/60">Koji model vas zanima?</option>
+                    <option value="norway" className="bg-estate">Model Norway (56m² + terasa)</option>
+                    <option value="atlantic" className="bg-estate">Model Atlantic (46m² + terasa)</option>
                   </select>
                 </div>
 
