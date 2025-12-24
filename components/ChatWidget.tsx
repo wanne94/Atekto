@@ -66,26 +66,26 @@ export const ChatWidget: React.FC = () => {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 z-40 bg-wood-600/90 backdrop-blur-sm hover:bg-wood-500 text-white p-4 rounded-full shadow-[0_0_20px_rgba(203,146,77,0.4)] transition-transform hover:scale-105 border border-white/10 ${isOpen ? 'hidden' : 'flex'}`}
+        className={`fixed bottom-6 right-6 z-40 bg-soil/90 backdrop-blur-sm hover:bg-clay text-white p-4 rounded-full shadow-[0_0_20px_rgba(191,142,109,0.4)] transition-transform hover:scale-105 border border-clay/30 ${isOpen ? 'hidden' : 'flex'}`}
       >
         <MessageSquare className="h-6 w-6" />
       </button>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-full max-w-sm md:w-96 glass-panel bg-stone-900/90 rounded-2xl shadow-2xl flex flex-col overflow-hidden h-[500px] animate-fade-in-up border border-white/10">
+        <div className="fixed bottom-6 right-6 z-50 w-full max-w-sm md:w-96 glass-panel bg-estate/90 rounded-2xl shadow-2xl flex flex-col overflow-hidden h-[500px] animate-fade-in-up border border-clay/20">
           {/* Header */}
-          <div className="bg-wood-600/20 backdrop-blur-md p-4 flex justify-between items-center text-white border-b border-white/10">
+          <div className="bg-clay/20 backdrop-blur-md p-4 flex justify-between items-center text-white border-b border-clay/20">
             <div className="flex items-center space-x-2">
-              <div className="bg-wood-500 p-1.5 rounded-full shadow-lg">
+              <div className="bg-soil p-1.5 rounded-full shadow-lg">
                 <Bot className="h-5 w-5 text-white" />
               </div>
               <div>
                 <h3 className="font-semibold text-sm tracking-wide">A-Frame Asistent</h3>
-                <p className="text-[10px] text-wood-200 uppercase tracking-wider font-bold">Online</p>
+                <p className="text-[10px] text-clay uppercase tracking-wider font-bold">Online</p>
               </div>
             </div>
-            <button 
+            <button
               onClick={() => setIsOpen(false)}
               className="text-white/60 hover:text-white hover:bg-white/10 p-1 rounded transition-colors"
             >
@@ -103,8 +103,8 @@ export const ChatWidget: React.FC = () => {
                 <div
                   className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm border ${
                     msg.role === 'user'
-                      ? 'bg-wood-600/80 border-wood-500/50 text-white rounded-br-none shadow-lg'
-                      : 'bg-white/10 border-white/10 text-stone-200 rounded-bl-none shadow-md backdrop-blur-sm'
+                      ? 'bg-soil/80 border-clay/50 text-white rounded-br-none shadow-lg'
+                      : 'bg-white/10 border-white/10 text-stone-white rounded-bl-none shadow-md backdrop-blur-sm'
                   }`}
                 >
                   {msg.text}
@@ -114,8 +114,8 @@ export const ChatWidget: React.FC = () => {
             {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-white/10 border border-white/10 px-4 py-3 rounded-2xl rounded-bl-none shadow-sm flex items-center space-x-2">
-                  <Loader2 className="h-4 w-4 animate-spin text-wood-400" />
-                  <span className="text-xs text-stone-400">Kucam odgovor...</span>
+                  <Loader2 className="h-4 w-4 animate-spin text-clay" />
+                  <span className="text-xs text-stone-white/60">Kucam odgovor...</span>
                 </div>
               </div>
             )}
@@ -123,7 +123,7 @@ export const ChatWidget: React.FC = () => {
           </div>
 
           {/* Input Area */}
-          <div className="p-4 bg-black/20 border-t border-white/10 backdrop-blur-md">
+          <div className="p-4 bg-black/20 border-t border-clay/20 backdrop-blur-md">
             <div className="flex items-center space-x-2">
               <input
                 type="text"
@@ -131,12 +131,12 @@ export const ChatWidget: React.FC = () => {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyPress}
                 placeholder="Pitajte o cijenama..."
-                className="flex-1 bg-white/5 border border-white/10 focus:bg-white/10 focus:border-wood-500 focus:ring-0 rounded-full px-4 py-2.5 text-sm transition-all outline-none text-white placeholder:text-stone-500"
+                className="flex-1 bg-white/5 border border-white/10 focus:bg-white/10 focus:border-clay focus:ring-0 rounded-full px-4 py-2.5 text-sm transition-all outline-none text-white placeholder:text-stone-white/40"
               />
               <button
                 onClick={handleSend}
                 disabled={!input.trim() || isLoading}
-                className="bg-wood-600 hover:bg-wood-500 disabled:bg-stone-700 disabled:text-stone-500 text-white p-2.5 rounded-full transition-colors shadow-lg border border-white/5"
+                className="bg-soil hover:bg-clay disabled:bg-estate-600 disabled:text-stone-white/40 text-white p-2.5 rounded-full transition-colors shadow-lg border border-clay/30"
               >
                 <Send className="h-5 w-5" />
               </button>

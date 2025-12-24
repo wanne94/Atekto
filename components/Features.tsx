@@ -42,26 +42,26 @@ export const Features: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-sm font-bold text-wood-500 uppercase tracking-widest mb-2 shadow-wood-500/20">Zašto A-Frame?</h2>
-            <h3 className="text-3xl md:text-5xl font-serif font-bold mb-6 text-white leading-tight">
-              Građeno u skladu sa prirodom, za vašu <span className="text-wood-400 italic">budućnost</span>.
+            <h2 className="text-sm font-bold text-clay uppercase tracking-widest mb-2">Zašto A-Frame?</h2>
+            <h3 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
+              Građeno u skladu sa prirodom, za vašu <span className="text-clay italic">budućnost</span>.
             </h3>
-            <p className="text-stone-300 text-lg mb-8 leading-relaxed font-light">
+            <p className="text-stone-white/70 text-lg mb-8 leading-relaxed font-light">
               Naše kuće nisu samo lijepe na oko. One su rezultat godina inženjerskog razvoja kako bi se postigao savršen balans između estetike, funkcionalnosti i održivosti.
             </p>
-            <button className="text-white border-b border-wood-500 pb-1 hover:text-wood-400 hover:border-wood-400 transition-colors font-medium">
-              Saznajte više o tehnologiji gradnje &rarr;
-            </button>
+            <a href="#modeli" className="inline-block text-white border-b border-clay pb-1 hover:text-clay hover:border-soil transition-colors font-medium">
+              Pogledajte naše modele &rarr;
+            </a>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {features.map((feature, idx) => (
               <div key={idx} className="group glass-panel p-6 rounded-2xl bg-white/5 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-wood-500/20 w-12 h-12 rounded-lg flex items-center justify-center text-wood-400 mb-4 group-hover:bg-wood-500/30 group-hover:text-wood-300 transition-colors">
+                <div className="bg-clay/20 w-12 h-12 rounded-lg flex items-center justify-center text-clay mb-4 group-hover:bg-clay/30 group-hover:text-clay-300 transition-colors">
                   {feature.icon}
                 </div>
-                <h4 className="text-lg font-bold mb-2 text-stone-100">{feature.title}</h4>
-                <p className="text-stone-400 text-sm leading-relaxed">
+                <h4 className="text-lg font-bold mb-2 text-stone-white">{feature.title}</h4>
+                <p className="text-stone-white/60 text-sm leading-relaxed">
                   {feature.description}
                 </p>
               </div>

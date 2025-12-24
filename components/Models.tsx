@@ -56,38 +56,41 @@ export const Models: React.FC = () => {
     <section id="modeli" className="py-24 relative overflow-hidden">
       {/* Background Image - Pine Forest */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1518730518541-d0843268c287?q=80&w=2670&auto=format&fit=crop" 
-          alt="Forest Background" 
-          className="w-full h-full object-cover opacity-20" 
+        <img
+          src="https://images.unsplash.com/photo-1518730518541-d0843268c287?q=80&w=2670&auto=format&fit=crop"
+          alt="Forest Background"
+          className="w-full h-full object-cover opacity-20"
+          onError={(e) => {
+            e.currentTarget.src = "https://images.unsplash.com/photo-1449156493391-d2cfa28e468b?q=80&w=2670&auto=format&fit=crop";
+          }}
         />
         {/* Gradient Overlay for Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-stone-950 via-stone-950/80 to-stone-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-estate-800 via-estate-800/80 to-estate-800" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Kolekcija Modela</h2>
-          <p className="text-stone-300 max-w-2xl mx-auto font-light text-lg">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Kolekcija Modela</h2>
+          <p className="text-stone-white/70 max-w-2xl mx-auto font-light text-lg">
             Bezkompromisan kvalitet gradnje inspirisan skandinavskim minimalizmom i toplinom planinskog doma.
             <br />
-            <span className="text-wood-400 text-sm mt-4 inline-block font-medium bg-wood-500/10 px-4 py-2 rounded-full border border-wood-500/20">
-              ✨ Kliknite na dugme "3D Prikaz" za interaktivni pregled modela
+            <span className="text-clay text-sm mt-4 inline-block font-medium bg-clay/10 px-4 py-2 rounded-full border border-clay/20">
+              Kliknite na dugme "3D Prikaz" za interaktivni pregled modela
             </span>
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {models.map((model) => (
-            <div key={model.id} className="group glass-panel rounded-2xl overflow-hidden hover:bg-stone-900/60 transition-all duration-300 transform hover:-translate-y-2 border border-white/5 hover:border-wood-500/30">
+            <div key={model.id} className="group glass-panel rounded-2xl overflow-hidden hover:bg-estate/60 transition-all duration-300 transform hover:-translate-y-2 border border-white/5 hover:border-clay/30">
               
               {/* Media Container */}
-              <div className="relative h-80 w-full bg-stone-900 overflow-hidden">
+              <div className="relative h-80 w-full bg-estate overflow-hidden">
                 {active3D[model.id] ? (
-                  <div className="w-full h-full cursor-move bg-gradient-to-b from-stone-800 to-stone-950">
+                  <div className="w-full h-full cursor-move bg-gradient-to-b from-estate-600 to-estate-800">
                     <Suspense fallback={
                       <div className="w-full h-full flex items-center justify-center text-white">
-                        <Loader2 className="h-8 w-8 animate-spin text-wood-500" />
+                        <Loader2 className="h-8 w-8 animate-spin text-clay" />
                       </div>
                     }>
                       <Canvas shadows camera={{ position: [8, 5, 10], fov: 40 }}>
@@ -120,14 +123,14 @@ export const Models: React.FC = () => {
                       alt={model.name} 
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 saturate-[0.85] group-hover:saturate-100"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-estate-800 via-transparent to-transparent opacity-90 pointer-events-none"></div>
                   </>
                 )}
 
                 {/* 3D Toggle Button */}
-                <button 
+                <button
                   onClick={() => toggle3D(model.id)}
-                  className="absolute bottom-4 left-4 z-20 flex items-center space-x-2 bg-stone-950/60 hover:bg-wood-600 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full transition-all text-sm font-semibold shadow-lg group-hover:shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                  className="absolute bottom-4 left-4 z-20 flex items-center space-x-2 bg-estate-800/60 hover:bg-soil backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full transition-all text-sm font-semibold shadow-lg group-hover:shadow-[0_0_15px_rgba(0,0,0,0.5)]"
                 >
                   {active3D[model.id] ? (
                     <>
@@ -143,7 +146,7 @@ export const Models: React.FC = () => {
                 </button>
 
                 {!active3D[model.id] && (
-                   <div className="absolute top-4 right-4 bg-wood-600/90 backdrop-blur-md border border-wood-500/50 px-4 py-1.5 rounded-full text-white font-bold text-sm shadow-lg z-20">
+                   <div className="absolute top-4 right-4 bg-soil/90 backdrop-blur-md border border-clay/50 px-4 py-1.5 rounded-full text-white font-bold text-sm shadow-lg z-20">
                      Od {model.price}
                    </div>
                 )}
@@ -151,32 +154,32 @@ export const Models: React.FC = () => {
               
               <div className="p-8">
                 <div className="flex justify-between items-end mb-4">
-                   <h3 className="text-2xl font-serif font-bold text-white group-hover:text-wood-400 transition-colors">{model.name}</h3>
-                   {active3D[model.id] && <span className="text-wood-400 font-bold text-lg">{model.price}</span>}
+                   <h3 className="text-2xl font-bold text-white group-hover:text-clay transition-colors">{model.name}</h3>
+                   {active3D[model.id] && <span className="text-clay font-bold text-lg">{model.price}</span>}
                 </div>
-                
-                <p className="text-stone-400 text-sm mb-6 leading-relaxed h-16">
+
+                <p className="text-stone-white/60 text-sm mb-6 leading-relaxed h-16">
                   {model.description}
                 </p>
-                
+
                 <div className="grid grid-cols-3 gap-2 py-4 border-t border-white/5 mb-6">
                   <div className="flex flex-col items-center justify-center p-2 rounded-lg bg-white/5">
-                    <Ruler className="h-4 w-4 text-wood-500 mb-1" />
-                    <span className="text-xs text-stone-300 font-medium">{model.area} m²</span>
+                    <Ruler className="h-4 w-4 text-clay mb-1" />
+                    <span className="text-xs text-stone-white/70 font-medium">{model.area} m²</span>
                   </div>
                   <div className="flex flex-col items-center justify-center p-2 rounded-lg bg-white/5">
-                    <BedDouble className="h-4 w-4 text-wood-500 mb-1" />
-                    <span className="text-xs text-stone-300 font-medium">{model.bedrooms} Sobe</span>
+                    <BedDouble className="h-4 w-4 text-clay mb-1" />
+                    <span className="text-xs text-stone-white/70 font-medium">{model.bedrooms} Sobe</span>
                   </div>
                   <div className="flex flex-col items-center justify-center p-2 rounded-lg bg-white/5">
-                    <Users className="h-4 w-4 text-wood-500 mb-1" />
-                    <span className="text-xs text-stone-300 font-medium">{model.bedrooms * 2 + 2} osoba</span>
+                    <Users className="h-4 w-4 text-clay mb-1" />
+                    <span className="text-xs text-stone-white/70 font-medium">{model.bedrooms * 2 + 2} osoba</span>
                   </div>
                 </div>
 
-                <button className="w-full py-3.5 bg-white/5 border border-white/10 text-white rounded-xl hover:bg-wood-600 hover:border-wood-600 transition-all flex items-center justify-center font-medium shadow-md group-hover:shadow-[0_0_20px_rgba(203,146,77,0.25)]">
-                  Detaljna Specifikacija <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
+                <a href="#kontakt" className="w-full py-3.5 bg-white/5 border border-white/10 text-white rounded-xl hover:bg-soil hover:border-soil transition-all flex items-center justify-center font-medium shadow-md group-hover:shadow-[0_0_20px_rgba(191,142,109,0.25)]">
+                  Zatraži Ponudu <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
               </div>
             </div>
           ))}

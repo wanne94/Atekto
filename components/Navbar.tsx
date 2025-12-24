@@ -48,10 +48,10 @@ export const Navbar: React.FC = () => {
                 if(isOpen) toggleMenu();
               }}
             >
-              <div className="bg-wood-600/20 p-2 rounded-xl border border-wood-500/20 group-hover:bg-wood-600/40 transition-all">
-                <Mountain className="h-6 w-6 text-wood-500" />
+              <div className="bg-clay/20 p-2 rounded-xl border border-clay/30 group-hover:bg-clay/40 transition-all">
+                <Mountain className="h-6 w-6 text-clay" />
               </div>
-              <span className="ml-3 text-lg font-bold font-serif tracking-widest text-white uppercase">
+              <span className="ml-3 text-lg font-bold tracking-widest text-white uppercase">
                 Atekto
               </span>
             </div>
@@ -62,14 +62,14 @@ export const Navbar: React.FC = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-sm font-medium text-stone-300 hover:text-wood-400 transition-colors tracking-wide"
+                  className="text-sm font-medium text-stone-white/80 hover:text-clay transition-colors tracking-wide"
                 >
                   {link.name}
                 </a>
               ))}
-              <button className="bg-wood-600 hover:bg-wood-500 text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition-all shadow-lg shadow-wood-600/20 border border-white/10 active:scale-95">
+              <a href="#kontakt" className="bg-soil hover:bg-clay text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition-all shadow-lg shadow-soil/30 border border-clay/30 active:scale-95">
                 Zakaži Sastanak
-              </button>
+              </a>
             </div>
 
             {/* Mobile Hamburger Button */}
@@ -94,26 +94,30 @@ export const Navbar: React.FC = () => {
           }`}
         >
           <div className="flex flex-col h-full p-6 space-y-2 animate-slide-down">
-            <p className="text-[10px] font-bold text-stone-500 uppercase tracking-[0.2em] mb-4">Navigacija</p>
+            <p className="text-[10px] font-bold text-clay/60 uppercase tracking-[0.2em] mb-4">Navigacija</p>
             {navLinks.map((link, idx) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="flex items-center justify-between text-2xl font-serif text-white py-4 border-b border-white/5 hover:text-wood-400 transition-colors"
+                className="flex items-center justify-between text-2xl text-white py-4 border-b border-white/5 hover:text-clay transition-colors"
                 onClick={toggleMenu}
               >
                 {link.name}
-                <ChevronRight className="h-5 w-5 text-stone-600" />
+                <ChevronRight className="h-5 w-5 text-clay/40" />
               </a>
             ))}
-            
+
             <div className="pt-10">
-              <button className="w-full bg-wood-600 hover:bg-wood-500 text-white py-5 rounded-2xl font-bold text-lg shadow-2xl border border-white/10 active:scale-95 transition-all">
+              <a
+                href="#kontakt"
+                onClick={toggleMenu}
+                className="block w-full bg-soil hover:bg-clay text-white py-5 rounded-2xl font-bold text-lg shadow-2xl border border-clay/20 active:scale-95 transition-all text-center"
+              >
                 Zatraži Ponudu Odmah
-              </button>
+              </a>
               <div className="mt-8 text-center">
-                <p className="text-stone-500 text-sm">info@atekto.ba</p>
-                <p className="text-stone-500 text-sm mt-1">+387 61 123 456</p>
+                <a href="mailto:info@atekto.ba" className="text-clay/60 text-sm hover:text-clay transition-colors">info@atekto.ba</a>
+                <a href="tel:+38761123456" className="block text-clay/60 text-sm mt-1 hover:text-clay transition-colors">+387 61 123 456</a>
               </div>
             </div>
           </div>

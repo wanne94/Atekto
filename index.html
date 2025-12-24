@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Atekto | Moderne Planinske Kuće</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
+              sans: ['Outfit', 'sans-serif'],
             },
             keyframes: {
               'fade-in': {
@@ -29,18 +28,58 @@
               'slide-down': 'slide-down 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
             },
             colors: {
-              wood: {
-                50: '#fcf9f2',
-                100: '#f8f1e1',
-                200: '#efe0c4',
-                300: '#e3c89c',
-                400: '#d5ac71',
-                500: '#cb924d',
-                600: '#bf7b3f',
-                700: '#9f6035',
-                800: '#824e31',
-                900: '#6b412b',
-                950: '#3e2216',
+              clay: {
+                DEFAULT: '#E7BD8B',
+                50: '#FBF6EF',
+                100: '#F7EDDF',
+                200: '#F0D9BF',
+                300: '#E7BD8B',
+                400: '#DCA567',
+                500: '#D18D43',
+                600: '#B5742F',
+                700: '#8A5823',
+                800: '#5F3D18',
+                900: '#34210D',
+              },
+              soil: {
+                DEFAULT: '#BF8E6D',
+                50: '#F5EDE7',
+                100: '#EBDACF',
+                200: '#D7B59F',
+                300: '#BF8E6D',
+                400: '#A6734F',
+                500: '#7D5639',
+                600: '#5F412B',
+                700: '#412D1D',
+                800: '#231810',
+                900: '#0F0A06',
+              },
+              estate: {
+                DEFAULT: '#1E305E',
+                50: '#E8EBF2',
+                100: '#C5CCE0',
+                200: '#9EAACA',
+                300: '#7688B4',
+                400: '#4E669E',
+                500: '#3A4D7A',
+                600: '#2C3A5C',
+                700: '#1E305E',
+                800: '#141F3D',
+                900: '#0A101F',
+              },
+              'stone-white': '#FEFEF5',
+              accent: {
+                DEFAULT: '#C3DDC3',
+                50: '#F4F9F4',
+                100: '#E9F3E9',
+                200: '#D6E8D6',
+                300: '#C3DDC3',
+                400: '#A5CCA5',
+                500: '#87BB87',
+                600: '#69A969',
+                700: '#4E864E',
+                800: '#336333',
+                900: '#1A331A',
               }
             }
           }
@@ -52,10 +91,10 @@
         scroll-behavior: smooth;
       }
       .glass-navbar {
-        background: rgba(12, 18, 15, 0.75);
+        background: rgba(30, 48, 94, 0.85);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(231, 189, 139, 0.2);
       }
       .glass-card {
         background: rgba(255, 255, 255, 0.03);
@@ -69,7 +108,7 @@
     </style>
     <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-stone-950 text-stone-100 antialiased overflow-x-hidden">
+  <body class="bg-estate-800 text-stone-white antialiased overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
