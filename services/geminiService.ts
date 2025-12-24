@@ -1,8 +1,15 @@
 import { GoogleGenAI } from "@google/genai";
 import { ChatMessage } from "../types";
 
-// Initialize the API client
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Lazy initialization - only create client when needed
+let ai: GoogleGenAI | null = null;
+
+const getAIClient = () => {
+  if (!ai && process.env.API_KEY) {
+    ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  }
+  return ai;
+};
 
 const SYSTEM_INSTRUCTION = `
 Ti si stručni arhitekta i konsultant za prodaju "Atekto" kuća.
@@ -17,11 +24,17 @@ Odgovaraj sažeto i korisno.
 `;
 
 export const sendMessageToGemini = async (
-  history: ChatMessage[], 
+  history: ChatMessage[],
   newMessage: string
 ): Promise<string> => {
+  const client = getAIClient();
+
+  if (!client) {
+    return "AI asistent trenutno nije dostupan. Molimo kontaktirajte nas direktno na +387 62 712 594.";
+  }
+
   try {
-    const response = await ai.models.generateContent({
+    const response = await client.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: [
         ...history.map(msg => ({
