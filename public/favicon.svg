@@ -1,0 +1,20 @@
+<svg width="32" height="32" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#D4A574" />
+      <stop offset="100%" stop-color="#C49A6C" />
+    </linearGradient>
+  </defs>
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M250 0L500 220V500H330L250 420L170 500H0V220L250 0ZM250 60L60 240V440H140L250 330L360 440H440V240L250 60Z"
+    fill="url(#logoGradient)"
+  />
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M250 140L340 195V305L250 360L160 305V195L250 140ZM250 190L195 222V278L250 310L305 278V222L250 190Z"
+    fill="url(#logoGradient)"
+  />
+</svg>
