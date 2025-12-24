@@ -99,10 +99,10 @@ export const Hero: React.FC = () => {
           Buđenje uz pogled na vodu. Spoj crnog metala, toplog drveta i prirode koja se ogleda u vašem domu.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <a href="#modeli" className="bg-soil hover:bg-clay text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(191,142,109,0.3)] border border-clay/50">
+          <a href="#modeli" className="glass-button bg-soil/80 hover:bg-clay text-white px-8 py-4 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg">
             Pogledaj Modele
           </a>
-          <a href="#kontakt" className="bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all hover:border-white/40">
+          <a href="#kontakt" className="glass-card hover:bg-white/10 text-white px-8 py-4 rounded-full font-semibold transition-all hover:border-white/30">
             Zakaži Obilazak
           </a>
         </div>

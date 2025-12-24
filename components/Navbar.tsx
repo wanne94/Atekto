@@ -65,7 +65,7 @@ export const Navbar: React.FC = () => {
                   {link.name}
                 </a>
               ))}
-              <a href="#kontakt" className="bg-soil hover:bg-clay text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition-all shadow-lg shadow-soil/30 border border-clay/30 active:scale-95">
+              <a href="#kontakt" className="glass-button bg-soil/80 hover:bg-clay text-white px-6 py-2.5 rounded-full text-xs font-bold tracking-widest uppercase transition-all active:scale-95">
                 Zatraži Ponudu
               </a>
             </div>
@@ -74,7 +74,7 @@ export const Navbar: React.FC = () => {
             <div className="md:hidden">
               <button
                 onClick={toggleMenu}
-                className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white focus:outline-none transition-all active:scale-90"
+                className="p-2.5 rounded-xl glass-card text-white focus:outline-none transition-all active:scale-90"
                 aria-label="Izbornik"
               >
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
               <a
                 href="#kontakt"
                 onClick={toggleMenu}
-                className="block w-full bg-soil hover:bg-clay text-white py-5 rounded-2xl font-bold text-lg shadow-2xl border border-clay/20 active:scale-95 transition-all text-center"
+                className="block w-full glass-button bg-soil/80 hover:bg-clay text-white py-5 rounded-2xl font-bold text-lg active:scale-95 transition-all text-center"
               >
                 Zatraži Ponudu
               </a>

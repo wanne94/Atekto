@@ -45,7 +45,7 @@ export const Contact: React.FC = () => {
               
               <div className="space-y-8">
                 <div className="flex items-start group">
-                  <div className="p-3 bg-white/5 rounded-lg border border-white/10 group-hover:border-clay/50 transition-colors mr-4">
+                  <div className="p-3 glass-card rounded-xl group-hover:border-clay/50 transition-all mr-4">
                     <Phone className="h-6 w-6 text-clay" />
                   </div>
                   <div>
@@ -54,7 +54,7 @@ export const Contact: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-start group">
-                  <div className="p-3 bg-white/5 rounded-lg border border-white/10 group-hover:border-clay/50 transition-colors mr-4">
+                  <div className="p-3 glass-card rounded-xl group-hover:border-clay/50 transition-all mr-4">
                      <Mail className="h-6 w-6 text-clay" />
                   </div>
                   <div>
@@ -63,7 +63,7 @@ export const Contact: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-start group">
-                   <div className="p-3 bg-white/5 rounded-lg border border-white/10 group-hover:border-clay/50 transition-colors mr-4">
+                   <div className="p-3 glass-card rounded-xl group-hover:border-clay/50 transition-all mr-4">
                       <MapPin className="h-6 w-6 text-clay" />
                    </div>
                   <div>
@@ -76,13 +76,13 @@ export const Contact: React.FC = () => {
             
             <div className="mt-12">
               <div className="flex space-x-4">
-                <a href="https://facebook.com/atekto" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-soil hover:border-soil hover:text-white transition-all cursor-pointer text-stone-white/60">
+                <a href="https://facebook.com/atekto" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:bg-clay/20 hover:border-clay/50 hover:text-white transition-all cursor-pointer text-stone-white/60">
                   <Facebook className="h-5 w-5" />
                 </a>
-                <a href="https://instagram.com/atekto" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-soil hover:border-soil hover:text-white transition-all cursor-pointer text-stone-white/60">
+                <a href="https://instagram.com/atekto" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:bg-clay/20 hover:border-clay/50 hover:text-white transition-all cursor-pointer text-stone-white/60">
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a href="https://linkedin.com/company/atekto" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-soil hover:border-soil hover:text-white transition-all cursor-pointer text-stone-white/60">
+                <a href="https://linkedin.com/company/atekto" target="_blank" rel="noopener noreferrer" className="w-10 h-10 glass-card rounded-full flex items-center justify-center hover:bg-clay/20 hover:border-clay/50 hover:text-white transition-all cursor-pointer text-stone-white/60">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </div>
@@ -101,23 +101,23 @@ export const Contact: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-stone-white/70 mb-2 ml-1">Ime i Prezime</label>
-                  <input type="text" id="name" required className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white placeholder:text-stone-white/40 focus:border-clay focus:bg-black/30 focus:ring-0 transition-all outline-none" placeholder="Vaše ime" />
+                  <input type="text" id="name" required className="w-full px-4 py-3 rounded-xl glass-input text-white placeholder:text-stone-white/40" placeholder="Vaše ime" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-stone-white/70 mb-2 ml-1">Email Adresa</label>
-                    <input type="email" id="email" required className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white placeholder:text-stone-white/40 focus:border-clay focus:bg-black/30 focus:ring-0 transition-all outline-none" placeholder="vas@email.com" />
+                    <input type="email" id="email" required className="w-full px-4 py-3 rounded-xl glass-input text-white placeholder:text-stone-white/40" placeholder="vas@email.com" />
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-stone-white/70 mb-2 ml-1">Broj Telefona</label>
-                    <input type="tel" id="phone" className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white placeholder:text-stone-white/40 focus:border-clay focus:bg-black/30 focus:ring-0 transition-all outline-none" placeholder="+387..." />
+                    <input type="tel" id="phone" className="w-full px-4 py-3 rounded-xl glass-input text-white placeholder:text-stone-white/40" placeholder="+387..." />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="model" className="block text-sm font-medium text-stone-white/70 mb-2 ml-1">Zainteresovani ste za model</label>
-                  <select id="model" aria-describedby="model-help" className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white focus:border-clay focus:bg-black/30 focus:ring-0 transition-all outline-none appearance-none">
+                  <select id="model" aria-describedby="model-help" className="w-full px-4 py-3 rounded-xl glass-input text-white appearance-none cursor-pointer">
                     <option value="" className="bg-estate text-stone-white/60">Koji model vas zanima?</option>
                     <option value="norway" className="bg-estate">Model Norway (56m² + terasa)</option>
                     <option value="atlantic" className="bg-estate">Model Atlantic (46m² + terasa)</option>
@@ -126,10 +126,10 @@ export const Contact: React.FC = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-stone-white/70 mb-2 ml-1">Vaša Poruka</label>
-                  <textarea id="message" rows={4} required className="w-full px-4 py-3 rounded-xl bg-black/20 border border-white/10 text-white placeholder:text-stone-white/40 focus:border-clay focus:bg-black/30 focus:ring-0 transition-all outline-none" placeholder="Napišite nam nešto više o vašim željama..."></textarea>
+                  <textarea id="message" rows={4} required className="w-full px-4 py-3 rounded-xl glass-input text-white placeholder:text-stone-white/40 resize-none" placeholder="Napišite nam nešto više o vašim željama..."></textarea>
                 </div>
 
-                <button type="submit" className="w-full bg-soil hover:bg-clay text-white font-bold py-4 rounded-xl transition-all shadow-[0_0_15px_rgba(191,142,109,0.2)] hover:shadow-[0_0_25px_rgba(231,189,139,0.4)] transform hover:-translate-y-1 border border-clay/50">
+                <button type="submit" className="w-full glass-button bg-soil/80 hover:bg-clay text-white font-bold py-4 rounded-xl transition-all transform hover:-translate-y-1">
                   Pošalji Upit
                 </button>
               </form>

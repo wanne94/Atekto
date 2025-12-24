@@ -151,7 +151,7 @@ export const Models: React.FC = () => {
                   onClick={() => toggle3D(model.id)}
                   aria-pressed={active3D[model.id] || false}
                   aria-label={active3D[model.id] ? `Prikaži fotografiju za ${model.name}` : `Prikaži 3D model za ${model.name}`}
-                  className="absolute bottom-4 left-4 z-20 flex items-center space-x-2 bg-estate-800/60 hover:bg-soil backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-full transition-all text-sm font-semibold shadow-lg group-hover:shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                  className="absolute bottom-4 left-4 z-20 flex items-center space-x-2 glass-button text-white px-4 py-2 rounded-full transition-all text-sm font-semibold shadow-lg"
                 >
                   {active3D[model.id] ? (
                     <>
@@ -178,11 +178,11 @@ export const Models: React.FC = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-2 py-3 border-t border-white/5 mb-4">
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-white/5">
+                  <div className="flex items-center gap-2 p-2 rounded-lg glass-card">
                     <Ruler className="h-4 w-4 text-clay" />
                     <span className="text-xs text-stone-white/70">{model.area} m² objekat</span>
                   </div>
-                  <div className="flex items-center gap-2 p-2 rounded-lg bg-white/5">
+                  <div className="flex items-center gap-2 p-2 rounded-lg glass-card">
                     <Ruler className="h-4 w-4 text-clay" />
                     <span className="text-xs text-stone-white/70">{model.terrace} m² terasa</span>
                   </div>
@@ -212,7 +212,7 @@ export const Models: React.FC = () => {
                   * Cijene su bez PDV-a. Cijene izvan BiH na upit.
                 </p>
 
-                <a href="#kontakt" className="w-full py-3.5 bg-soil border border-clay/30 text-white rounded-xl hover:bg-clay transition-all flex items-center justify-center font-medium shadow-md">
+                <a href="#kontakt" className="w-full py-3.5 glass-button bg-soil/80 hover:bg-clay text-white rounded-xl transition-all flex items-center justify-center font-medium shadow-md">
                   Zatraži Ponudu <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </div>
